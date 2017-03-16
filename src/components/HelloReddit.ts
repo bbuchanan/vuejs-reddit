@@ -21,9 +21,7 @@ export default class HelloReddit extends Vue {
 	load() {
 		axios.get(`https://www.reddit.com/r/${this.subreddit}/top.json?limit=5`).then(response => {
 			console.log(response.data)
-			/* eslint-disable */
 			this.redditPosts = <Posts>response.data
-			/* eslint-enable */
 			this.data = this.redditPosts.data.children[0].data.title
 		})
 	}
